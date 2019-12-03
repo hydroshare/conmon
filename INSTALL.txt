@@ -1,0 +1,5 @@
+$ pip install conmon
+
+or
+
+$ python setup.py install
