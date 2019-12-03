@@ -5,7 +5,7 @@ Monitor Docker containers using the Docker Remote API.
 
 To use as a package:
 
-    >>> from conmon import server_up, all_containers_up
+    >>> from conmon.monitor import server_up, all_containers_up
     >>> server_up()
     True
     >>> all_containers_up()
