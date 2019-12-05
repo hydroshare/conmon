@@ -19,7 +19,7 @@ To use as a script:
     Display True if docker server is up.
 
     positional arguments:
-      service     which service to check; one of [server, containers]
+      service:    which service to check; one of [server, containers]
 
     optional arguments:
       -h, --help  show this help message and exit

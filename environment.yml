@@ -1,0 +1,9 @@
+name: conmon
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - docker-py
+  - python=3
+  - pyyaml
+

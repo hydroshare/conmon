@@ -7,7 +7,11 @@ from setuptools import find_packages
 
 
 def version():
-    """Get the version number."""
+    """
+    version() -> str
+
+    Return the version string.
+    """
 
     with open("VERSION.txt") as v:
         _version = v.read()
@@ -18,7 +22,11 @@ __version__ = version()
 
 
 def long_description():
-    """Construct the long description text."""
+    """
+    long_descriptions -> str
+
+    Return the long description text.
+    """
 
     with open("README.rst") as r:
         long_description_1 = r.read()
@@ -44,6 +52,13 @@ setup(name="conmon",
                    "Topic :: System :: Monitoring",
                    "Intended Audience :: Developers",
                    "Intended Audience :: System Administrators",
-                   ],
+                  ],
       zip_safe=False,
+      python_requires='>=3',
+      install_requires=["docker-py",
+                        "pyyaml",
+                       ],
+      tests_require=["docker-py",
+                     "pyyaml",
+                    ],
       test_suite="conmon.tests")

@@ -1,16 +1,19 @@
 """
-Monitor Docker containers
+Monitor for the conmon package.
 """
 
 import os
 import logging
 import docker
+from conmon import utils
+from conmon import alerts
 
-LOGFILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "conmon.log")
+config = utils.config()
+
 FORMAT = "%(asctime)-15s %(levelname)-8s %(message)s"
 logging.basicConfig(level=logging.DEBUG,
                     format=FORMAT,
-                    filename=LOGFILE)
+                    filename=config["log"]["filespec"])
 
 
 def server_up():

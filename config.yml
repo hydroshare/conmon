@@ -1,0 +1,13 @@
+log:
+  filespec: "/path/to/conmon.log"
+
+email:
+  server: "example.com"
+  port: 465 # TLS
+  user: "user@example.com"
+  pass: "password"
+  from: "from@example.com"
+  to:
+    - "to1@example.com"
+    - "to2@example.com"
+    - "to3@example.com"
