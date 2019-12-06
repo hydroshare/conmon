@@ -31,7 +31,7 @@ def server_up():
             logging.info("Docker daemon up.")
         else:
             logging.warning("Docker daemon down.")
-    except:
+    except Exception:
         logging.error("Exception occurred whilc checking docker daemon:", exc_info=True)
     return rc
 
@@ -46,13 +46,13 @@ def all_containers_up():
     rc = False
     try:
         client = docker.from_env()
-        statuses = {container.name : (container.status == "running") for container in client.containers.list()}
+        statuses = {container.name: (container.status == "running") for container in client.containers.list()}
         if all(statuses.values()):
             rc = True
             logging.info("All containers up.")
         else:
             down_containers = [key for key, value in statuses.items() if not value]
             logging.warning(f"Down containers: {down_containers}")
-    except:
+    except Exception:
         logging.error("Exception occurred while checking container statuses:", exc_info=True)
     return rc

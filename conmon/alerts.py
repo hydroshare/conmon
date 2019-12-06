@@ -34,6 +34,6 @@ def alert(subject, content):
             msg.set_content(content)
 
             server.send_message(msg)
-    except:
+    except Exception:
         logging.error("Exception occurred while sending alert", exc_info=True)
     return

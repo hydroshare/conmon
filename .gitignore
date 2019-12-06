@@ -4,7 +4,7 @@ config.yaml.real
 
 # Emacs
 *~
-\#~
+\#*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
